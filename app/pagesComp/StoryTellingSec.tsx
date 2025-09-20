@@ -3,26 +3,29 @@ import React from 'react'
 import { motion } from "framer-motion"
 
 
-    const experiences = [
-        {
-            year: "2007–2012",
-            role: "Senior Designer @ XYZ"
-        },
-        {
-            year: "2013–2017",
-            role: "Motion Lead @ ABC Agency"
-        },
-        {
-            year: "2018–Now",
-            role: "Freelance Motion Specialist"
-        }
-    ]
-
+const experiences = [
+  {
+    year: "2009–2023",
+    subtitle: "Motion Graphics Artist & Supervisor @ elsalam asc",
+    desc: "Exclusive operator of exhibitions & museums. Led motion graphics production, supervised creative teams, and delivered large-scale visual projects across Egypt and Saudi Arabia.",
+  },
+  {
+    year: "2012–2023",
+    subtitle: "Motion Graphics Artist & Supervisor @ Octopus Animation Studio",
+    desc: "Created and supervised high-quality motion graphics for advertising campaigns, branding projects, and broadcast media in a part-time capacity.",
+  },
+  {
+    year: "2005–2023",
+    subtitle: "Freelance Motion Graphics Artist",
+    desc: "Worked independently with clients worldwide, delivering 2D animation, post-production, and motion graphics across diverse industries.",
+  },
+];
 
 function StoryComp() {
   return (
     <section className="relative flex flex-col gap-32 pl-20">
 
+      {/* Vertical timeline line */}
       <motion.div
         className="absolute left-8 top-0 w-2 bg-gradient-to-b from-teal-400 via-teal-500/80 to-transparent rounded-full"
         initial={{ height: 0 }}
@@ -34,7 +37,7 @@ function StoryComp() {
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
-          className="relative flex flex-col gap-10 p-16 rounded-3xl 
+          className="relative flex flex-col gap-6 p-16 rounded-3xl 
             bg-gray-950/60 backdrop-blur-lg
             border border-white/10
             shadow-2xl shadow-black/70
@@ -45,19 +48,30 @@ function StoryComp() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, ease: "easeOut", delay: index * 0.3 }}
         >
-         
+          {/* Dot indicator */}
           <span className="absolute -left-10 top-12 w-8 h-8 rounded-full bg-teal-400 shadow-[0_0_30px_10px] shadow-teal-500/40" />
 
- 
-          <h3 className="text-5xl font-mono font-bold text-teal-400">{exp.year}</h3>
+          {/* Year */}
+          <h3 className="text-4xl font-mono font-bold text-teal-400">
+            {exp.year}
+          </h3>
 
-          <h4 className="text-3xl font-semibold text-gray-100">{exp.role}</h4>
+          {/* Subtitle */}
+          <h4 className="text-2xl w-lg font-semibold text-gray-100">
+            {exp.subtitle}
+          </h4>
 
+          {/* Description */}
+          <p className="text-md w-lg text-gray-400 leading-relaxed">
+            {exp.desc}
+          </p>
         </motion.div>
       ))}
     </section>
-  )
+  );
 }
+
+
 
 
 

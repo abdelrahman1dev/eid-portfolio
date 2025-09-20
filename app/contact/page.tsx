@@ -1,7 +1,6 @@
 "use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { CircleCheck } from "lucide-react";
 import { toast } from "sonner";
 import * as Yup from "yup";
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
-import { h1 } from "framer-motion/client";
 import CtaBtn from "../components/CtaBtn";
 
 function HeroSec() {
