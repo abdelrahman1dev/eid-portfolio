@@ -68,20 +68,17 @@ function WorkSec() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="z-1 relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="-z-10 relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Glowing Background */}
       <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 translate-x-1/3 translate-y-1/3"></div>
       <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 translate-x-1/3 translate-y-1/3"></div>
 
-      <div className='w-full flex flex-col items-center md:items-start justify-center md:justify-between py-20 px-4 md:px-20'>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className='text-4xl sm:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent'
+      <div className='w-full flex flex-col  items-center  text-center justify-center md:justify-between py-20 px-4 md:px-20'>
+      <h1
+          className='text-4xl sm:text-5xl font-bold mb-12   '
         >
           my work gallery
-        </motion.h1>
+        </h1>
 
         <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {projects.map((project, index) => (

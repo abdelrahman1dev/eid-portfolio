@@ -2,7 +2,6 @@
 import React from 'react'
 import { motion } from "framer-motion"
 
-
 const experiences = [
   {
     year: "2009–2023",
@@ -23,11 +22,11 @@ const experiences = [
 
 function StoryComp() {
   return (
-    <section className="relative flex flex-col gap-32 pl-20">
+    <section className="relative flex flex-col gap-16 md:gap-32 pl-8 md:pl-20">
 
       {/* Vertical timeline line */}
       <motion.div
-        className="absolute left-8 top-0 w-2 bg-gradient-to-b from-teal-400 via-teal-500/80 to-transparent rounded-full"
+        className="absolute left-3 md:left-8 top-0 w-1 md:w-2 bg-gradient-to-b from-teal-400 via-teal-500/80 to-transparent rounded-full"
         initial={{ height: 0 }}
         whileInView={{ height: "100%" }}
         viewport={{ once: true, amount: 0.1 }}
@@ -37,7 +36,7 @@ function StoryComp() {
       {experiences.map((exp, index) => (
         <motion.div
           key={index}
-          className="relative flex flex-col gap-6 p-16 rounded-3xl 
+          className="relative flex flex-col gap-3 md:gap-6 p-6 md:p-16 rounded-2xl md:rounded-3xl 
             bg-gray-950/60 backdrop-blur-lg
             border border-white/10
             shadow-2xl shadow-black/70
@@ -49,20 +48,20 @@ function StoryComp() {
           transition={{ duration: 1, ease: "easeOut", delay: index * 0.3 }}
         >
           {/* Dot indicator */}
-          <span className="absolute -left-10 top-12 w-8 h-8 rounded-full bg-teal-400 shadow-[0_0_30px_10px] shadow-teal-500/40" />
+          <span className="absolute -left-5 md:-left-10 top-6 md:top-12 w-4 h-4 md:w-8 md:h-8 rounded-full bg-teal-400 shadow-[0_0_20px_5px] md:shadow-[0_0_30px_10px] shadow-teal-500/40" />
 
           {/* Year */}
-          <h3 className="text-4xl font-mono font-bold text-teal-400">
+          <h3 className="text-2xl md:text-4xl font-mono font-bold text-teal-400">
             {exp.year}
           </h3>
 
           {/* Subtitle */}
-          <h4 className="text-2xl w-lg font-semibold text-gray-100">
+          <h4 className="text-lg lg:w-md md:text-2xl font-semibold text-gray-100 leading-tight">
             {exp.subtitle}
           </h4>
 
           {/* Description */}
-          <p className="text-md w-lg text-gray-400 leading-relaxed">
+          <p className="text-sm lg:w-md text-gray-400 leading-relaxed">
             {exp.desc}
           </p>
         </motion.div>
@@ -71,32 +70,22 @@ function StoryComp() {
   );
 }
 
-
-
-
-
-
 function StoryTellingSec() {
-
-
   return (
-    <div className='w-full flex flex-col items-center md:items-start justify-center md:justify-between  py-20 px-20'>
-      <div>
-        <h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-            Storytelling through Motion
+    <div className='w-full flex flex-col items-center text-center justify-center md:justify-between py-10 md:py-20 px-4 md:px-20'>
+      <div className="text-center ">
+        <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6'>
+          Storytelling through Motion
         </h1>
-        <p className='text-lg text-gray-400 max-w-xl'>
-            I believe in the power of motion to tell compelling stories. With over a decade of experience, I specialize in creating engaging motion graphics and infographics that captivate audiences and convey complex information with clarity and creativity.
+        <p className='text-base md:text-lg text-gray-400 max-w-xl mx-auto leading-relaxed font-light'>
+          I believe in the power of motion to tell compelling stories. With over a decade of experience, I specialize in creating engaging motion graphics and infographics that captivate audiences and convey complex information with clarity and creativity.
         </p>
-        </div>
-        <div className='text-center flex flex-col w-full items-center mt-20 justify-center'>
-            <h2 className='text-2xl font-semibold mt-8 mb-4'>
-                My Journey
-                </h2>
+      </div>
+      
+      <div className='text-center flex flex-col w-full items-center mt-12 md:mt-20 justify-center'>
+     
 
-            <StoryComp />
-
-
+        <StoryComp />
       </div>
     </div>
   )
