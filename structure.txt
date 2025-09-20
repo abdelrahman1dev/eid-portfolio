@@ -1,0 +1,103 @@
+
+Main page (Landing/Home) → Give the first impression (hero animation, tagline, maybe his showreel highlight).
+
+Feed page → Then you can go deep into the TikTok-style vertical project feed as the “Portfolio” section/page.
+
+
+ Landing Page Layout
+1. Side Navigation (Fixed Left/Right)
+
+Vertical nav bar with smooth scroll links:
+
+About
+
+Feed
+
+Contact
+
+Download CV
+
+Use icons + text for modern look (shadcn/ui + lucide icons work perfectly).
+
+Active section indicator (dot or highlight when scrolling).
+
+2. Hero Section
+
+Layout:
+
+Left side → Text (Dad’s name, 17+ years exp, short tagline).
+
+Right side → Profile picture (circle with subtle border glow).
+
+Background:
+
+Animated dots/particles using react-bits
+ or Framer Motion.
+
+Gradient overlay for depth.
+
+Animation:
+
+Fade-in text & image.
+
+Floating effect for pfp (Framer Motion y oscillation).
+
+3. Quick Highlights (Brands Worked With)
+
+Elegant grid of client logos.
+
+Monochrome logos → hover turns them full color (clean effect).
+
+Section title: “Trusted by leading brands”.
+
+4. Storytelling Timeline (17+ Years)
+
+Animated horizontal/vertical timeline.
+
+Each milestone (year range) → company/project highlight.
+
+Use Framer Motion scroll-triggered reveal.
+
+Example:
+
+2007–2012: Senior Designer @ XYZ
+
+2013–2017: Motion Lead @ ABC Agency
+
+2018–Now: Freelance Motion Specialist
+
+5. Small Projects Gallery
+
+Mini grid (3–6 items) previewing selected works.
+
+Hover → show title + “View More” → links to full feed.
+
+Use subtle motion (scale/opacity).
+
+6. Call to Action
+
+Elegant centered section:
+
+“Let’s bring your story to life.”
+
+Button: View Full Portfolio Feed
+
+Secondary button: Contact Me
+
+7. Footer
+
+Small + minimal:
+
+Social icons (Behance, LinkedIn, Dribbble, Email).
+
+“© 2025 [Dad’s Name]. All rights reserved.”
+
+🎨 Tech Choices
+
+Next.js + Tailwind → structure + styling.
+
+Framer Motion → reveal animations, floating effects.
+
+react-bits → particles/dots background.
+
+shadcn/ui → components (buttons, cards, modals).
