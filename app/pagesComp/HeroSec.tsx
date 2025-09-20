@@ -36,8 +36,7 @@ function HeroSec() {
           </span>
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut dicta
-          vitae fuga atque quasi nobis.
+          I create captivating motion graphics and infographics that bring stories to life and simplify complex information.
         </p>
 
         {/* Socials */}

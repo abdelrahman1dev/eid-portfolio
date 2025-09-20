@@ -200,3 +200,12 @@
 .infinite-scroll-container:hover {
   animation-play-state: paused;
 }
+::selection {
+  @apply bg-teal-400 text-gray-200;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  @apply bg-teal-400 text-gray-200;
+  text-shadow: none;
+}
