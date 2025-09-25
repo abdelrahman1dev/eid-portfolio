@@ -3,7 +3,9 @@ import "./globals.css";
 import SideNav from "./components/SideNav";
 import BottomNav from "./components/BottomNav";
 import GoTopBtn from "./components/GoTopBtn";
+import Footer from "./components/Footer";
 import { Toaster } from "sonner";
+
 
 export const metadata: Metadata = {
   title: "Mohamed Eid",
@@ -18,6 +20,7 @@ export default function RootLayout({
 
 
 
+
   return (
     <html lang="en">
       <body className="bg-black/97 text-white antialiased relative overflow-x-hidden">
@@ -26,6 +29,7 @@ export default function RootLayout({
         {children}
         <GoTopBtn />
         <BottomNav />
+        <Footer />
       </body>
     </html>
   );

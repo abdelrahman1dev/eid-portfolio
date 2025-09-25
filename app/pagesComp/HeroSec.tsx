@@ -27,7 +27,7 @@ function HeroSec() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2 className="text-lg sm:text-xl font-light text-gray-300 mb-2 tracking-wide">
           Hello, I`m 
-          <span className="text-teal-400 font-medium">Mohamed Eid</span>
+          <span className="text-teal-400 font-medium">  Mohamed Eid</span>
         </h2>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mt-4 mb-6 text-teal-300 leading-tight">
           A Motion Graphic Designer <br />

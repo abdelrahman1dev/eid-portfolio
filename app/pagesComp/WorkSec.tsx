@@ -10,6 +10,8 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import MuxPlayer from "@mux/mux-player-react";
+import MuxPlayerElement from "@mux/mux-player"
 
 interface Project {
   id: number;
@@ -24,43 +26,15 @@ const projects: Project[] = [
     id: 1,
     title: "Brand Motion Reel",
     desc: "A showcase of motion graphics for international clients.",
-    video: "/videos/project1.mp4",
+    video: "HRRh02uWVd7B7jBlLTJMV4xrkyxAxT1slJfxjXeJz5w8",
     tags: ["Motion Design", "Branding"],
   },
   {
     id: 2,
     title: "Infographic Explainer",
     desc: "Animated infographic simplifying complex data.",
-    video: "/videos/project2.mp4",
+    video: "JyFBc1oOIu5vaFM0201icgzwyLCStdkNbiTWRa5Cc00d38",
     tags: ["Infographic", "Animation"],
-  },
-  {
-    id: 3,
-    title: "Product Launch Video",
-    desc: "High-energy video for a product campaign.",
-    video: "/videos/project3.mp4",
-    tags: ["Product Video", "3D"],
-  },
-  {
-    id: 4,
-    title: "Brand Motion Reel",
-    desc: "A showcase of motion graphics for international clients.",
-    video: "/videos/project1.mp4",
-    tags: ["Motion Design", "Branding"],
-  },
-  {
-    id: 5,
-    title: "Infographic Explainer",
-    desc: "Animated infographic simplifying complex data.",
-    video: "/videos/project2.mp4",
-    tags: ["Infographic", "Animation"],
-  },
-  {
-    id: 6,
-    title: "Product Launch Video",
-    desc: "High-energy video for a product campaign.",
-    video: "/videos/project3.mp4",
-    tags: ["Product Video", "3D"],
   },
 ];
 
@@ -93,13 +67,14 @@ function WorkSec() {
             >
               {/* Video Container */}
               <div className="relative aspect-video overflow-hidden">
-                <video
-                  src={project.video}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  muted
-                  loop
-                  autoPlay
-                />
+              <MuxPlayer
+                streamType="on-demand"
+                playbackId={project.video}
+                className="w-full h-full object-cover"
+                muted
+                loop
+                autoPlay
+              />
 
                 {/* Hover Overlay */}
                 <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${

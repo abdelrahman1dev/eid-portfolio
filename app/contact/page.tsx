@@ -3,6 +3,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { toast } from "sonner";
 import * as Yup from "yup";
+import { fetchN8NData } from "../api/n8n";
 
 const ContactForm = () => {
   // Validation schema with Yup
@@ -34,6 +35,14 @@ const ContactForm = () => {
           console.log("Form data:", values);
           toast.success(`form submitted sucssefully` )
           resetForm();
+          fetchN8NData(values.name, values.email, values.message)
+            .then((data) => {
+              console.log("Success:", data);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              toast.error("Failed to send message. Please try again later.");
+            });
         }}
       >
         {({ isSubmitting }) => (
