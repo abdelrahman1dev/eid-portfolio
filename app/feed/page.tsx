@@ -113,7 +113,7 @@ function FeedPage() {
                 muted={muted}
                 loop
                 playsInline
-                className="w-full h-full object-fit"
+                className="w-full h-full object-cover lg:object-contain"
               />
               <button
                 onClick={() => setMuted(!muted)}
