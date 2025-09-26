@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Play, Eye } from 'lucide-react';
+
+import React from "react";
+import { motion } from "framer-motion";
+import { Play } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,14 +11,13 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import MuxPlayer from "@mux/mux-player-react";
-import MuxPlayerElement from "@mux/mux-player"
 
+import MuxPlayer from "@mux/mux-player-react";
 interface Project {
   id: number;
   title: string;
   desc: string;
-  video: string;
+  video: string; // mux playbackId
   tags: string[];
 }
 
@@ -39,135 +39,86 @@ const projects: Project[] = [
 ];
 
 function WorkSec() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
-    <section className="-z-10 relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Glowing Background */}
       <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 translate-x-1/3 translate-y-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 translate-x-1/3 translate-y-1/3"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 -translate-x-1/3 translate-y-1/3"></div>
 
-      <div className='w-full flex flex-col  items-center  text-center justify-center md:justify-between py-20 px-4 md:px-20'>
-      <h1
-          className='text-4xl sm:text-5xl font-bold mb-12   '
-        >
-          my work gallery
+      <div className="w-full  flex flex-col items-center text-center justify-center md:justify-between py-20 px-4 md:px-20">
+        <h1 className="text-4xl relative sm:text-5xl font-bold mb-12 ">my work gallery
+
+              <div className="absolute top-2 right-0 w-40 -z-10 rounded-full h-10 bg-teal-400 pointer-events-none"></div>
         </h1>
+      
 
-        <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-green-400/50 transition-all duration-300"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="relative overflow-hidden rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-green-400/50 transition-all duration-300 group"
             >
-              {/* Video Container */}
-              <div className="relative aspect-video overflow-hidden">
-              <MuxPlayer
-                streamType="on-demand"
-                playbackId={project.video}
-                className="w-full h-full object-cover"
-                muted
-                loop
-                autoPlay
-              />
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="relative aspect-video cursor-pointer w-full group">
+                    {/* Mux Thumbnail */}
+                    <img
+                      src={`https://image.mux.com/${project.video}/thumbnail.jpg`}
+                      alt={project.title}
+                      className="w-full h-full object-contain"
+                    />
 
-                {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${
-                  hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                }`}>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <motion.button
-
-                        className="flex flex-col items-center gap-3 text-white"
-                      >
-                        <div className="p-2 top-2 right-2 absolute z-10  rounded-full bg-green-400/20 border border-green-400/50 backdrop-blur-sm">
-                          <Play className="w-5 h-5 text-green-400" fill="currentColor" />
-                        </div>
-                      
-                      </motion.button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full p-0 bg-black/95 border-gray-800">
-                      <div className="relative aspect-video">
-                        <video
-                          src={project.video}
-                          controls
-                          autoPlay
-                          className="w-full h-full object-cover"
-                        />
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="p-4 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors shadow-lg backdrop-blur-sm">
+                        <Play className="w-8 h-8 text-white" />
                       </div>
-                      <div className="p-6">
-                        <DialogHeader>
-                          <DialogTitle className="text-white text-xl font-semibold">
-                            {project.title}
-                          </DialogTitle>
-                          <DialogDescription className="text-gray-300">
-                            {project.desc}
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-3 py-1 text-xs bg-green-400/20 text-green-400 rounded-full border border-green-400/30"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-
-                {/* Preview Icon */}
-                <div className={`absolute top-4 right-4 transition-opacity duration-300 ${
-                  hoveredIndex === index ? 'opacity-0' : 'opacity-100'
-                }`}>
-                  <div className="p-2 rounded-full bg-black/50 backdrop-blur-sm">
-                    <Eye className="w-5 h-5 text-white" />
+                    </div>
                   </div>
-                </div>
-              </div>
+                </DialogTrigger>
 
-              {/* Content Overlay - Only visible on hover */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: hoveredIndex === index ? 1 : 0,
-                  y: hoveredIndex === index ? 0 : 10
-                }}
-                transition={{ duration: 0.3 }}
-                className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent"
-              >
-                <h3 className="text-white font-semibold text-lg mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 text-sm mb-3 line-clamp-2">
-                  {project.desc}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2 py-1 text-xs bg-green-400/20 text-green-400 rounded-full border border-green-400/30"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+                {/* Dialog Content */}
+                <DialogContent className="max-w-4xl bg-gray-900/95 backdrop-blur-md border border-gray-700">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold text-white">
+                      {project.title}
+                    </DialogTitle>
+                    <DialogDescription className="text-gray-400">
+                      {project.desc}
+                    </DialogDescription>
+                  </DialogHeader>
+
+                  {/* Mux Player */}
+                  <MuxPlayer
+                    streamType="on-demand"
+                    playbackId={project.video}
+                    className="w-full h-64 rounded-lg"
+                    autoPlay
+                  />
+
+                  {/* Tags */}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-sm rounded-full bg-green-500/20 text-green-400 border border-green-400/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default WorkSec
+export default WorkSec;
