@@ -1,6 +1,6 @@
 import { MailIcon } from 'lucide-react'
 import Image from 'next/image';
-import React from 'react'
+import React, { Suspense } from 'react'
 import CountUp from 'react-countup';
 
 
@@ -45,7 +45,9 @@ const CardData = [
     },
 ]
 
-function Card() {
+ function Card() {
+
+    
     return (
         <div className="w-[80%] relative p-6 rounded-2xl flex lg:flex-row flex-col gap-4
               bg-gray-950/20 backdrop-blur-md
@@ -55,9 +57,11 @@ function Card() {
               overflow-hidden">
 
             <div className="flex items-center">
-                <Image src="https://scontent.fcai30-1.fna.fbcdn.net/v/t1.6435-9/97496801_10158426161387630_6320740538723074048_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=c1vq3eiDq7cQ7kNvwHdIipg&_nc_oc=AdllvfRJUYoMsXf6cCKeduWb21fWPL7DTA2ZT94sjR-Y1q4jpGq0a4HhsKmNttTn3Jg&_nc_zt=23&_nc_ht=scontent.fcai30-1.fna&_nc_gid=t_o2JLlR4tqXFtNbOVCAQA&oh=00_AfYFO1m0y9KZ1YcBFcJw4B7YvxAs6c7SlU830puJxy8miQ&oe=68F6AB47" alt="avatar"
+            <Suspense fallback={<div className="w-40 h-40 bg-gray-700 rounded-2xl animate-pulse" />}>
+                        <Image src="https://scontent.fcai30-1.fna.fbcdn.net/v/t1.6435-9/97496801_10158426161387630_6320740538723074048_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=c1vq3eiDq7cQ7kNvwHdIipg&_nc_oc=AdllvfRJUYoMsXf6cCKeduWb21fWPL7DTA2ZT94sjR-Y1q4jpGq0a4HhsKmNttTn3Jg&_nc_zt=23&_nc_ht=scontent.fcai30-1.fna&_nc_gid=t_o2JLlR4tqXFtNbOVCAQA&oh=00_AfYFO1m0y9KZ1YcBFcJw4B7YvxAs6c7SlU830puJxy8miQ&oe=68F6AB47" alt="avatar"
                 width={480} height={480}
                     className="w-120 h-fit  rounded-2xl ring-1 ring-white/10" />
+            </Suspense>
 
             </div>
 

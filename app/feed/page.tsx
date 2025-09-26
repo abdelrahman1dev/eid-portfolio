@@ -1,7 +1,8 @@
 "use client";
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Hls from "hls.js";
-import { Underline, Volume1, VolumeOff } from "lucide-react";
+import {  Volume1, VolumeOff } from "lucide-react";
+
 
 interface Project {
   id: number;
@@ -111,6 +112,8 @@ function FeedPage() {
                 ref={el => { playerRefs.current[index] = el; }}
                 autoPlay
                 muted={muted}
+                preload="metadata"
+                poster={`https://image.mux.com/${project.video}/thumbnail.jpg`}
                 loop
                 playsInline
                 className="w-full h-full object-cover lg:object-contain"

@@ -13,6 +13,9 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
+
+
 
 interface SideNavProps {
   className?: string;
@@ -88,6 +91,7 @@ export default function SideNav({ className }: SideNavProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-cyan-400"
+              prefetch={false}
             >
               {icon}
             </Link>
