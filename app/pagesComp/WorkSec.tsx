@@ -46,10 +46,17 @@ function WorkSec() {
       <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-green-400 rounded-full blur-[160px] opacity-20 -translate-x-1/3 translate-y-1/3"></div>
 
       <div className="w-full  flex flex-col items-center text-center justify-center md:justify-between py-20 px-4 md:px-20">
-        <h1 className="text-4xl relative sm:text-5xl font-bold mb-12 ">my work gallery
+        <motion.h1
+          className="text-4xl relative sm:text-5xl font-bold mb-12 "
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          my work gallery
 
-              <div className="absolute top-2 right-0 w-40 -z-10 rounded-full h-10 bg-teal-400 pointer-events-none"></div>
-        </h1>
+          <div className="absolute top-2 right-0 w-40 -z-10 rounded-full h-10 bg-teal-400 pointer-events-none"></div>
+        </motion.h1>
       
 
           
@@ -84,12 +91,19 @@ function WorkSec() {
                 {/* Dialog Content */}
                 <DialogContent className="max-w-4xl bg-gray-900/95 backdrop-blur-md border border-gray-700">
                   <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-white">
-                      {project.title}
-                    </DialogTitle>
-                    <DialogDescription className="text-gray-400">
-                      {project.desc}
-                    </DialogDescription>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <DialogTitle className="text-2xl font-bold text-white">
+                        {project.title}
+                      </DialogTitle>
+                      <DialogDescription className="text-gray-400">
+                        {project.desc}
+                      </DialogDescription>
+                    </motion.div>
                   </DialogHeader>
 
                   {/* Mux Player */}
@@ -101,16 +115,26 @@ function WorkSec() {
                   />
 
                   {/* Tags */}
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <motion.div
+                    className="mt-4 flex flex-wrap gap-2"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
                     {project.tags.map((tag, i) => (
-                      <span
+                      <motion.span
                         key={i}
                         className="px-3 py-1 text-sm rounded-full bg-green-500/20 text-green-400 border border-green-400/30"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: i * 0.1 }}
                       >
                         {tag}
-                      </span>
+                      </motion.span>
                     ))}
-                  </div>
+                  </motion.div>
                 </DialogContent>
               </Dialog>
             </motion.div>

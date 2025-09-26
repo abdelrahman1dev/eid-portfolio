@@ -1,5 +1,6 @@
 import React from "react";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
 import CtaBtn from "../components/CtaBtn";
 
 function HeroSec() {
@@ -25,19 +26,37 @@ function HeroSec() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="text-lg sm:text-xl font-light text-gray-300 mb-2 tracking-wide">
-          Hello, I`m 
+        <motion.h2
+          className="text-lg sm:text-xl font-light text-gray-300 mb-2 tracking-wide"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Hello, I`m
           <span className="text-teal-400 font-medium">  Mohamed Eid</span>
-        </h2>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mt-4 mb-6 text-teal-300 leading-tight">
+        </motion.h2>
+        <motion.h1
+          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mt-4 mb-6 text-teal-300 leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           A Motion Graphic Designer <br />
           <span className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light">
             & Infographic Specialist
           </span>
-        </h1>
-        <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+        </motion.h1>
+        <motion.p
+          className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed font-light"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           I create captivating motion graphics and infographics that bring stories to life and simplify complex information.
-        </p>
+        </motion.p>
 
         {/* Socials */}
         <div className="flex justify-center space-x-6 mb-8">
@@ -62,7 +81,13 @@ function HeroSec() {
 
     </section>
 
-<section className="bg-black w-full overflow-hidden ">
+<motion.section
+  className="bg-black w-full overflow-hidden "
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.6 }}
+>
   <div className="scroll-wrapper flex w-max infinite-scroll-container  ">
     {/* First set */}
     <div className="flex gap-3 text-7xl font-thin whitespace-nowrap">
@@ -81,7 +106,7 @@ function HeroSec() {
       ))}
     </div>
   </div>
-</section>
+</motion.section>
 
       </>
   );

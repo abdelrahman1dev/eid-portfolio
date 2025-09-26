@@ -1,6 +1,7 @@
 import { MailIcon } from 'lucide-react'
 
 import React, { Suspense } from 'react'
+import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import TiltedCard from '../../components/TiltedCard';
 
@@ -78,15 +79,33 @@ function Card() {
 
             <div className='flex flex-col justify-between w-full '>
                 <div className='flex flex-col gap-1 px-4 py-8'>
-                    <h1 className='text-3xl lg:text-5xl font-bold'>
+                    <motion.h1
+                        className='text-3xl lg:text-5xl font-bold'
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Mohamed Eid
-                    </h1>
-                    <h2 className='text-lg lg:text-2xl font-thin'>
+                    </motion.h1>
+                    <motion.h2
+                        className='text-lg lg:text-2xl font-thin'
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         Motion & Infographic Specialist
-                    </h2>
-                    <h2 className='text-md lg:text-lg font-thin'>
+                    </motion.h2>
+                    <motion.h2
+                        className='text-md lg:text-lg font-thin'
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
                         works currently at <span className='text-teal-400 font-semibold'>Dabdoob company</span>
-                    </h2>
+                    </motion.h2>
                 </div>
 
                 <div className='w-full flex items-center gap-2 lg:flex-row flex-col'>
@@ -95,20 +114,47 @@ function Card() {
 
                     {
                         CardData.map((card, index) => (
-                            <div className='
-                 w-full h-35 
+                            <motion.div
+                                className='
+                 w-full h-35
                 px-4 py-2 rounded-2xl flex flex-col gap-2
               bg-gray-950/20 backdrop-blur-md
               border border-white/10
               shadow-2xl shadow-black/60
               ring-1 ring-white/2
               overflow-hidden'
-                                key={index}>
-                                <h1>{card.title}</h1>
-                                <h2>{card.subTitle} </h2>
-                                <h2>{card.desc}</h2>
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                            >
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
+                                >
+                                    {card.title}
+                                </motion.h1>
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
+                                >
+                                    {card.subTitle}
+                                </motion.h2>
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                                >
+                                    {card.desc}
+                                </motion.h2>
 
-                            </div>
+                            </motion.div>
                         ))
                     }
                 </div>
