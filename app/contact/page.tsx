@@ -3,7 +3,9 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { toast } from "sonner";
 import * as Yup from "yup";
+
 import { fetchN8NData } from "../api/n8n";
+import Whatsapp from "../components/WhatsAppico";
 
 const ContactForm = () => {
   // Validation schema with Yup
@@ -33,7 +35,7 @@ const ContactForm = () => {
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           console.log("Form data:", values);
-          toast.success(`form submitted sucssefully` )
+          toast.success(`form submitted sucssefully`)
           resetForm();
           fetchN8NData(values.name, values.email, values.message)
             .then((data) => {
@@ -113,6 +115,20 @@ const ContactForm = () => {
           </Form>
         )}
       </Formik>
+
+
+      <div className="mt-6 text-center text-gray-400 text-sm">
+        <h1>or</h1>
+        <h1>contact me with</h1>
+        <button className=" mt-2 text-green-500 p-2 rounded-3xl cursor-pointer hover:bg-green-500 hover:text-white transition  border border-green-500" >
+
+          <Whatsapp size="20" text="whatsapp" />
+
+  
+
+        </button>
+
+      </div>
     </div>
   );
 };

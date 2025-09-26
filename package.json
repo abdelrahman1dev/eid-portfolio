@@ -15,7 +15,9 @@
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.16",
+    "gsap": "^3.13.0",
     "hls.js": "^1.6.13",
+    "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.22",
     "next": "15.5.3",
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/locomotive-scroll": "^4.1.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

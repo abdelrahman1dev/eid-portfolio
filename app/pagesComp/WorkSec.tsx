@@ -67,11 +67,11 @@ function WorkSec() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative overflow-hidden rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-green-400/50 transition-all duration-300 group"
+              className="relative overflow-hidden rounded-xl hover:scale-105 bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-green-400/50 transition-all duration-300 group"
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <div className="relative aspect-video cursor-pointer w-full group">
+                  <div className="relative aspect-video cursor-pointer w-full group ">
                     {/* Mux Thumbnail */}
                     <img
                       src={`https://image.mux.com/${project.video}/thumbnail.jpg`}
