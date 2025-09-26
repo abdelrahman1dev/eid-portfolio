@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black/97 text-white antialiased relative overflow-x-hidden">
-      <Toaster />
+        <Toaster />
         <SideNav />
         {children}
         <GoTopBtn />
