@@ -43,11 +43,12 @@ export default function SideNav({ className }: SideNavProps) {
   });
 
   const links = [
-    { href: "/", label: t('home'), icon: <Home className="w-5 h-5" /> },
-    { href: "/about", label: t('about'), icon: <User className="w-5 h-5" /> },
-    { href: "/feed", label: t('feed'), icon: <Video className="w-5 h-5" /> },
-    { href: "/contact", label: t('contact'), icon: <Mail className="w-5 h-5" /> },
-    { href: "/cv.pdf", label: t('cv'), icon: <FileText className="w-5 h-5" /> },
+    { href: `/${locale}`, label: t("home"), icon: <Home className="w-5 h-5" /> },
+    { href: `/${locale}/about`, label: t("about"), icon: <User className="w-5 h-5" /> },
+    { href: `/${locale}/feed`, label: t("feed"), icon: <Video className="w-5 h-5" /> },
+    { href: `/${locale}/contact`, label: t("contact"), icon: <Mail className="w-5 h-5" /> },
+    // cv is static (not localized), so keep it root
+    { href: "/cv.pdf", label: t("cv"), icon: <FileText className="w-5 h-5" /> },
   ];
 
   const socials = [
@@ -88,20 +89,10 @@ export default function SideNav({ className }: SideNavProps) {
       className={`hidden lg:flex fixed top-0 z-10 right-0 h-screen bg-black/40 backdrop-blur-md p-4 flex-col items-center shadow-lg border-r border-gray-800 ${className}`}
     >
       <div className="mb-4 w-full flex items-center justify-center">
-        {/* small screens: compact select; md+: buttons */}
-        <div className="block md:hidden w-full">
-          <select
-            aria-label={t('language')}
-            value={locale}
-            onChange={(e) => handleLanguageChange(e.target.value)}
-            className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600"
-          >
-            <option value="en">English</option>
-            <option value="ar">العربية</option>
-          </select>
-        </div>
+        
+   
 
-        <div className="hidden md:flex gap-2">
+        <div className={`hidden md:flex ${expanded ? "flex-col" : "flex-row"}  gap-2`}>
           <button
             onClick={() => handleLanguageChange('en')}
             className={`px-3 py-1 rounded ${locale === 'en' ? 'bg-teal-500 text-black' : 'bg-gray-800 text-white'}`}

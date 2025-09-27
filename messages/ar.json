@@ -51,17 +51,35 @@
   },
   "contact": {
     "title": "تواصل معي",
-    "name": "الاسم", 
+    "name": "الاسم",
     "email": "البريد الإلكتروني",
     "message": "الرسالة",
-    "namePlaceholder": "أدخل اسمك", 
+    "namePlaceholder": "أدخل اسمك",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
     "messagePlaceholder": "اكتب رسالتك...",
     "submit": "إرسال الرسالة",
     "submitting": "جاري الإرسال...",
     "or": "أو",
-    "contactWith": "تواصل معي عبر", 
-    "whatsapp": "واتساب"
+    "contactWith": "تواصل معي عبر",
+    "whatsapp": "واتساب",
+    "validation": {
+      "nameTooShort": "قصير جداً!",
+      "nameTooLong": "طويل جداً!",
+      "nameRequired": "الاسم مطلوب",
+      "emailInvalid": "بريد إلكتروني غير صحيح",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "messageTooShort": "يجب أن تكون الرسالة على الأقل 10 أحرف",
+      "messageRequired": "الرسالة مطلوبة"
+    },
+    "toast": {
+      "success": "تم إرسال النموذج بنجاح",
+      "error": "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً."
+    }
+  },
+  "footer": {
+    "developedBy": "تم التطوير بواسطة",
+    "name": "عبدالرحمن محمد عيد",
+    "year": "@2025"
   }
 }
 

@@ -52,7 +52,7 @@
   "contact": {
     "title": "Contact Me",
     "name": "Name",
-    "email": "Email", 
+    "email": "Email",
     "message": "Message",
     "namePlaceholder": "Enter your name",
     "emailPlaceholder": "Enter your email",
@@ -61,6 +61,24 @@
     "submitting": "Sending...",
     "or": "or",
     "contactWith": "contact me with",
-    "whatsapp": "whatsapp"
+    "whatsapp": "whatsapp",
+    "validation": {
+      "nameTooShort": "Too Short!",
+      "nameTooLong": "Too Long!",
+      "nameRequired": "Name is required",
+      "emailInvalid": "Invalid email",
+      "emailRequired": "Email is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "messageRequired": "Message is required"
+    },
+    "toast": {
+      "success": "Form submitted successfully",
+      "error": "Failed to send message. Please try again later."
+    }
+  },
+  "footer": {
+    "developedBy": "developed by",
+    "name": "abdelrahman mohamed eid",
+    "year": "@2025"
   }
 }
