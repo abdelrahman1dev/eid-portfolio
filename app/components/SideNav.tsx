@@ -81,7 +81,7 @@ export default function SideNav({ className }: SideNavProps) {
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
-      className={`flex fixed top-0 z-10 right-0 h-screen bg-black/40 backdrop-blur-md p-4 flex-col items-center shadow-lg border-r border-gray-800 ${className}`}
+      className={`hidden lg:flex fixed top-0 z-10 right-0 h-screen bg-black/40 backdrop-blur-md p-4 flex-col items-center shadow-lg border-r border-gray-800 ${className}`}
     >
       <div className="mb-4 w-full flex items-center justify-center">
         {/* small screens: compact select; md+: buttons */}

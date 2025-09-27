@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import MuxPlayer from "@mux/mux-player-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface Project {
   id: number;
@@ -40,6 +41,7 @@ const projects: Project[] = [
 ];
 
 function WorkSec() {
+  const t = useTranslations("work");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
@@ -57,7 +59,7 @@ function WorkSec() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          my work gallery
+          {t("title")}
           <div className="absolute top-2 right-0 w-40 -z-10 rounded-full h-10 bg-teal-400 pointer-events-none"></div>
         </motion.h1>
 

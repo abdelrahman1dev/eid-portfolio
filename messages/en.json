@@ -1,11 +1,66 @@
 {
-  "home": "Home",
-  "about": "About",
-  "feed": "Feed",
-  "contact": "Contact",
-  "cv": "CV",
-  "language": "Language",
-  "linkedin": "LinkedIn",
-  "instagram": "Instagram",
-  "youtube": "YouTube"
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "feed": "Feed", 
+    "contact": "Contact",
+    "cv": "CV",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Mohamed Eid",
+    "title": "Motion Graphic Designer & Infographic Specialist",
+    "description": "I create captivating motion graphics and infographics that bring stories to life and simplify complex information.",
+    "cta": "Have any struggles?",
+    "ctaAction": "contact me"
+  },
+  "card": {
+    "name": "Mohamed Eid",
+    "title": "Motion & Infographic Specialist", 
+    "company": "works currently at",
+    "companyName": "Dabdoob company",
+    "experience": "experience of",
+    "years": "+ years",
+    "experienceDesc": "in motion design and infographic",
+    "projectsTitle": "over", 
+    "projectsDesc": "projects completed",
+    "clientsTitle": "about",
+    "clientsDesc": "happy clients over the years"
+  },
+  "story": {
+    "title": "Storytelling through Motion",
+    "description": "I believe in the power of motion to tell compelling stories. With over a decade of experience, I specialize in creating engaging motion graphics and infographics that captivate audiences and convey complex information with clarity and creativity.",
+    "experiences": [
+      {
+        "subtitle": "Motion Graphics Artist & Supervisor @ elsalam asc",
+        "desc": "Exclusive operator of exhibitions & museums. Led motion graphics production, supervised creative teams, and delivered large-scale visual projects across Egypt and Saudi Arabia."
+      },
+      {
+        "subtitle": "Motion Graphics Artist & Supervisor @ Octopus Animation Studio",
+        "desc": "Created and supervised high-quality motion graphics for advertising campaigns, branding projects, and broadcast media in a part-time capacity."
+      },
+      {
+        "subtitle": "Freelance Motion Graphics Artist",
+        "desc": "Worked independently with clients worldwide, delivering 2D animation, post-production, and motion graphics across diverse industries."
+      }
+    ]
+  },
+  "work": {
+    "title": "my work gallery"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email", 
+    "message": "Message",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Write your message...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "or": "or",
+    "contactWith": "contact me with",
+    "whatsapp": "whatsapp"
+  }
 }

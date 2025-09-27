@@ -1,10 +1,11 @@
-import { getRequestConfig } from 'next-intl/server';
+import {getRequestConfig} from 'next-intl/server';
 
-export default getRequestConfig(async ({ locale }) => {
+export default getRequestConfig(async ({locale}) => {
+ 
+  const validLocale = locale || 'en';
+  
   return {
-    // locale passed to NextIntlClientProvider
-    locale: locale!,
-    // load messages from the messages directory
-    messages: (await import(`./messages/${locale}.json`)).default,
+    locale: validLocale as string,
+    messages: (await import(`./messages/${validLocale}.json`)).default
   };
 });

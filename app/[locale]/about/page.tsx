@@ -1,8 +1,8 @@
 "use client";
 import React from 'react'
-import Card from '../components/Card'
+import Card from '../../components/Card'
 import { Suspense } from 'react';
-import CardSkeleton from '../components/CardSkeleton';
+import CardSkeleton from '../../components/CardSkeleton';
 
 function AboutSec() {
   return (
