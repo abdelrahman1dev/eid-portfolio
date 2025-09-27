@@ -14,13 +14,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
-
 
 
 interface SideNavProps {
   className?: string;
 }
+declare global {
+  interface Navigator {
+    userLanguage?: string; // add missing property
+  }
+}
+
 
 export default function SideNav({ className }: SideNavProps) {
   const [expanded, setExpanded] = useState(false);
@@ -31,7 +35,7 @@ export default function SideNav({ className }: SideNavProps) {
   const [locale, setLocale] = useState<string>(() => {
     if (typeof window === 'undefined') return 'en';
     try {
-      const nav = navigator.language || (navigator as any).userLanguage || 'en';
+      const nav = navigator.language || navigator.userLanguage || 'en';
       return nav.startsWith('ar') ? 'ar' : 'en';
     } catch (e) {
       return 'en';

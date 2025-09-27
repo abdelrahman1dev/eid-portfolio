@@ -4,6 +4,11 @@ import { motion } from "framer-motion"
 import { useTranslations , useMessages } from 'next-intl';
 
 
+interface Experience {
+  year: string;
+  subtitle: string;
+  desc: string;
+}
 
 function StoryComp() {
   
@@ -21,7 +26,7 @@ function StoryComp() {
         transition={{ duration: 2, ease: "easeInOut" }}
       />
 
-      {experiences.map((exp:any, index:number) => (
+      {experiences.map((exp: Experience, index:number) => (
         <motion.div
           key={index}
           className="relative flex flex-col gap-3 md:gap-6 p-6 md:p-16 rounded-2xl md:rounded-3xl 
