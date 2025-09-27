@@ -4,8 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { toast } from "sonner";
 import * as Yup from "yup";
 
-import { fetchN8NData } from "../api/n8n";
-import Whatsapp from "../components/WhatsAppico";
+import { fetchN8NData } from "../../api/n8n";
+import Whatsapp from "../../components/WhatsAppico";
 
 const ContactForm = () => {
   // Validation schema with Yup
