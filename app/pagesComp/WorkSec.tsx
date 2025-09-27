@@ -125,6 +125,7 @@ function WorkSec() {
                       playbackId={project.video}
                       className="w-full h-64 rounded-lg"
                       autoPlay={false}
+                      accentColor="#10B981"
                     />
                   )}
 

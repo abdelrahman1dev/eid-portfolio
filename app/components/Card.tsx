@@ -2,6 +2,7 @@ import { MailIcon } from 'lucide-react'
 import Image from 'next/image';
 import React, { Suspense } from 'react'
 import CountUp from 'react-countup';
+import Whatsapp from './WhatsAppico';
 
 
 
@@ -105,6 +106,7 @@ const CardData = [
 
 
             <button
+            
             className='
             absolute
                 
@@ -115,7 +117,7 @@ const CardData = [
               ring-1 ring-white/2
               overflow-hidden hover:bg-black cursor-pointer transition-all duration-300 ease-in-out hover:opacity-75'
             >
-                <MailIcon className='w-4' />
+                <Whatsapp size='20' />
             </button>
 
 
