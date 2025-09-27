@@ -79,6 +79,11 @@
   "footer": {
     "developedBy": "developed by",
     "name": "abdelrahman mohamed eid",
-    "year": "@2025"
+    "year": "@2025",
+    "copyright": "© 2025 All rights reserved.",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
   }
 }

@@ -73,14 +73,13 @@ export default function SideNav({ className }: SideNavProps) {
 
         <div className="mb-4">
         <select
-          value={currentLocale}
+          value={locale}
           onChange={(e) => handleLanguageChange(e.target.value)}
           className="bg-gray-800 text-white p-2 rounded border border-gray-600"
         >
-          <option value="en">En</option>
-          <option value="ar">ع</option>
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
         </select>
-      </div>
       </div>
       
 
