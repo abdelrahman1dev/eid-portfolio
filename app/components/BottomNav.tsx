@@ -7,15 +7,17 @@ import {
   FileText,
 } from "lucide-react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 
 export default function BottomNav() {
+  const { locale } = useParams();
   const links = [
-    { href: "/", label: "Home", icon: <Home className="w-5 h-5" /> },
-    { href: "/about", label: "About", icon: <User className="w-5 h-5" /> },
-    { href: "/feed", label: "Feed", icon: <Video className="w-5 h-5" /> },
-    { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
-    { href: "/cv.pdf", label: "CV", icon: <FileText className="w-5 h-5" /> },
+    { href: `/${locale}/`, label: "Home", icon: <Home className="w-5 h-5" /> },
+    { href: `/${locale}/about`, label: "About", icon: <User className="w-5 h-5" /> },
+    { href: `/${locale}/feed`, label: "Feed", icon: <Video className="w-5 h-5" /> },
+    { href: `/${locale}/contact`, label: "Contact", icon: <Mail className="w-5 h-5" /> },
+    { href: `/`, label: "CV", icon: <FileText className="w-5 h-5" /> },
   ];
 
   return (
