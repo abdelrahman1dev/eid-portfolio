@@ -11,6 +11,7 @@ import "../globals.css";
 // ... import your components
 
 const locales = ['en', 'ar'];
+type Locale = typeof locales[number];
 
 export default async function LocaleLayout({
   children,
@@ -19,9 +20,15 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  console.log('🎯 Layout locale param:', locale); // Debug
 
-  if (!locales.includes(locale as any)) notFound();
+
+  function isLocale(x: string): x is Locale {
+  return (locales as readonly string[]).includes(x);
+}
+
+if (!isLocale(locale)) {
+  notFound();
+}
 
   const messages = await getMessages({ locale });
 
