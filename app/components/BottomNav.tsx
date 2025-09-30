@@ -33,6 +33,7 @@ export default function BottomNav() {
             <Link
               href={href}
               className={`flex flex-col items-center  hover:text-teal-400 transition text-xs gap-1 ${label === "feed" ? "bg-teal-400 hover:opacity-50 hover:text-black rounded-full justify-center p-2 text-black scale-115 bottom-7 right-[50%] translate-x-[50%] w-12 h-12 absolute" : "" }`}
+            prefetch
             >
               <h1 className="">{icon}</h1>
             {
