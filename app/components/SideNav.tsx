@@ -44,13 +44,13 @@ export default function SideNav({ className }: SideNavProps) {
     { href: "#", label: "YouTube", icon: <Youtube className="w-5 h-5" /> },
   ];
 
-  // 🔑 handle language switch by replacing locale in the URL
+ 
   const handleLanguageChange = (newLocale: string) => {
     const parts = (pathname || "/").split("/").filter(Boolean);
     if (["en", "ar"].includes(parts[0])) {
-      parts[0] = newLocale; // replace existing locale
+      parts[0] = newLocale; 
     } else {
-      parts.unshift(newLocale); // add if missing
+      parts.unshift(newLocale); 
     }
     const target = "/" + parts.join("/");
     router.push(target);
@@ -64,7 +64,6 @@ export default function SideNav({ className }: SideNavProps) {
       onMouseLeave={() => setExpanded(false)}
       className={`hidden lg:flex fixed top-0 z-10 right-0 h-screen bg-black/40 backdrop-blur-md p-4 flex-col items-center justify-center shadow-lg border-r border-gray-800 ${className}`}
     >
-      {/* Language Switcher */}
 
 
 
@@ -75,13 +74,19 @@ export default function SideNav({ className }: SideNavProps) {
         <select
           value={currentLocale}
           onChange={(e) => handleLanguageChange(e.target.value)}
-          className="bg-gray-800 text-white p-2 rounded border border-gray-600"
+          className={`bg-gray-800 text-white p-2 rounded border border-gray-600 ${!expanded ? "hidden" : ''}`}
         >
           <option value="en">En</option>
           <option value="ar">ع</option>
         </select>
+        
       </div>
       </div>
+      <div className={`px-3 py-2 border border-teal-400 text-center rounded-2xl text-teal-400 ${expanded ? "hidden" : ''}`}>
+          {
+            currentLocale === "en" ? "en" : "ع"
+          }
+        </div>
       
 
       <div className="mb-8" />

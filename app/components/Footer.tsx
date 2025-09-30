@@ -26,7 +26,7 @@ function Footer() {
 
 
   return (
-    <footer className='w-full h-fit p-8 pb-30 lg:pb-0 bg-black/90 border-t border-white/10  flex flex-col justify-center items-center text-sm px-4'>
+    <footer className='w-full h-fit p-8 lg:px-10 pb-30 lg:pb-20 bg-black/90 border-t border-white/10  flex flex-col justify-center items-center text-sm px-4'>
       <div className="flex justify-between items-center w-full max-w-6xl mb-4">
         <nav className="flex lg:flex-row flex-col gap-6">
           {
