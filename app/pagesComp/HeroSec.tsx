@@ -92,9 +92,10 @@ function HeroSec() {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <motion.div
-          className="flex gap-6 text-6xl sm:text-7xl font-thin whitespace-nowrap"
+        dir="ltr"
+          className="flex gap-6 text-6xl sm:text-7xl font-thin whitespace-nowrap " 
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+          transition={{ repeat: Infinity, duration:  15, ease: "linear" }}
         >
           {keywords.concat(keywords).map((word, index) => (
             <h1 key={index} className="px-4 text-gray-200">
