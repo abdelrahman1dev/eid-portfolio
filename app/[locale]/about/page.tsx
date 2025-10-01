@@ -2,7 +2,7 @@
 import React from 'react'
 import Card from '../../components/Card'
 import { Suspense } from 'react';
-import CardSkeleton from '../../components/CardSkeleton';
+import CardSkeleton from '../../components/skeletons/CardSkeleton';
 
 function AboutSec() {
   return (
